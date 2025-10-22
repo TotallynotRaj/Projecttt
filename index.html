@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raji's Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #0c0c0c;
+      color: #eaeaea;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      border-bottom: 1px solid #222;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: #f5c56b;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #eaeaea;
+      text-decoration: none;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f5c56b;
+    }
+
+    section {
+      padding: 80px 60px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #f5c56b;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .about {
+      background: linear-gradient(to bottom, #151515, #0c0c0c);
+      animation: fadeIn 1s ease-out;
+    }
+
+    .about img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 3px solid #f5c56b;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .about p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #cfcfcf;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+
+    .works {
+      background: linear-gradient(to bottom, #0c0c0c, #141414);
+    }
+
+    .work-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .work-card {
+      background-color: #1a1a1a;
+      width: 320px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+      transform: translateY(50px);
+      opacity: 0;
+      transition: all 0.8s ease;
+    }
+
+    .work-card.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .work-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      filter: brightness(0.85);
+      transition: filter 0.4s ease;
+    }
+
+    .work-card:hover img {
+      filter: brightness(1);
+    }
+
+    .work-card h3 {
+      color: #f5c56b;
+      font-size: 1.1rem;
+      padding: 15px 0;
+    }
+
+
+    .contact {
+      background: #141414;
+      animation: fadeIn 1s ease-out;
+    }
+
+    form {
+      background-color: #1c1c1c;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    input, textarea, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    input, textarea, select {
+      background-color: #262626;
+      color: #eaeaea;
+    }
+
+    button {
+      background-color: #f5c56b;
+      color: #0c0c0c;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e2b454;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+   
+    @media (max-width: 768px) {
+      header { flex-direction: column; padding: 15px 20px; }
+      .work-gallery { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1> Raji Santos</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#works">Works</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="about" id="about">
+    <img src="Raji.jpg" alt="Profile Picture">
+    <h2>Hi Im Raji Dwayne O. Santos</h2>
+    <p>Im a student and im from OB Montessori Center, Grade 9-Emerald.  
+    I create cinematic-style websites and enjoy building projects.</p>
+  </section>
+
+  <section class="works" id="works">
+    <h2>My Works</h2>
+    <div class="work-gallery">
+      <div class="work-card">
+        <img src="PP.png" alt="Project 1">
+        <h3>My Personal Slambook</h3>
+      </div>
+
+      <div class="work-card">
+        <img src="Output.png" alt="Project 2">
+        <h3>My Top 3 Best Movies</h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <select>
+        <option>Select Service</option>
+        <option>Web Design</option>
+        <option>Graphic Design</option>
+        <option>Video Editing</option>
+      </select>
+      <textarea placeholder="Your Message" rows="4"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    2025 Raji Santos.
+  </footer>
+
+  <script>
+    const cards = document.querySelectorAll('.work-card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+</body>
+</html>
